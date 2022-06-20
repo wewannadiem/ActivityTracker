@@ -6,11 +6,12 @@
 #define ACTIVITYTRACKER_ACTIVITY_H
 
 #include <string>
+#include "vector"
 
 class Activity {
 public:
 
-    Activity();
+    Activity(std::string &description, int starting_time_min, int starting_time_hour, int ending_time_min, int ending_time_hour, short int day, short int month, short int year);
 
     ~Activity();
 
@@ -18,21 +19,18 @@ public:
     const std::string &getDescription() const;
     void setDescription(const std::string &description);
 
-    int getStartingTime() const;
-    void setStartingTime(int startingTime);
-
-    int getEndingTime() const;
-    void setEndingTime(int endingTime);
-
     void setDate(short day, short month, short year);
 
 private:
     std::string description;
 
-// TODO think of a better type for the time
 
-    int starting_time;
-    int ending_time;
+    int starting_time_hour;
+    int starting_time_min;
+
+    int ending_time_min;
+    int ending_time_hour;
+
     short int day;
     short int month;
     short int year;
