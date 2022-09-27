@@ -6,6 +6,8 @@
 #define ACTIVITYTRACKER_REGISTER_H
 
 #include "Activity.h"
+#include "vector"
+
 
 class Register {
 public:
@@ -13,14 +15,11 @@ public:
 
     ~Register();
 
-    void setDate(short day, short month, short year);
+    void addActivity(Activity &act);
 
 
 private:
-    short int day;
-    short int month;
-    short int year;
-
+    std::vector<Activity*> list;
 };
 
 

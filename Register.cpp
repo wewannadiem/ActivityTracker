@@ -12,8 +12,7 @@ Register::~Register() {
 
 }
 
-void Register::setDate(short day, short month, short year) {
-    this->day = day;
-    this->month = month;
-    this->year = year;
+
+void Register::addActivity(Activity &act) {
+    list.push_back(&act);
 }

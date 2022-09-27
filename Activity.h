@@ -7,33 +7,29 @@
 
 #include <string>
 #include "vector"
+#include "QDateTime"
 
 class Activity {
 public:
 
-    Activity(std::string &description, int starting_time_min, int starting_time_hour, int ending_time_min, int ending_time_hour, short int day, short int month, short int year);
+    Activity(QDateTime start, QDateTime end);
 
     ~Activity();
 
     // getters and setters
     const std::string &getDescription() const;
     void setDescription(const std::string &description);
+    const QDateTime &getStartingDate() const;
+    void setStartingDate(const QDateTime &startingDate);
+    const QDateTime &getEndingDate() const;
+    void setEndingDate(const QDateTime &endingDate);
 
-    void setDate(short day, short month, short year);
 
 private:
     std::string description;
+    QDateTime startingDate;
+    QDateTime endingDate;
 
-
-    int starting_time_hour;
-    int starting_time_min;
-
-    int ending_time_min;
-    int ending_time_hour;
-
-    short int day;
-    short int month;
-    short int year;
 
 };
 

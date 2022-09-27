@@ -1,12 +1,29 @@
 #include <iostream>
 #include "Register.h"
 #include "Activity.h"
+#include "Window.h"
+#include <QApplication>
+#include <QPushButton>
+#include <QProgressBar>
+#include <QSlider>
 
 
-int main() {
-    std::cout << "Hello, World!" << std::endl;
+// Registro di attività che memorizza cosa si è fatto durante una giornata. Classe che rappresenta attività con descrizione,
+// tempo inizio e fine, Classe registro che colleziona attività su base del giorno. Interfaccia semplice per mostrare il
+// registro sulla base di un giorno fatta con QT.
 
-    Register dayOne;
-    dayOne.setDate(8, 2, 2001);
-    return 0;
+int main(int argc, char **argv) {
+    
+    QApplication app (argc, argv);
+
+    Window window;
+    window.show();
+
+    Register april;
+    Activity jogging(QDateTime(QDate(2020, 10,1), QTime(8,30,0)), QDateTime(QDate(2020,10,1), QTime(9, 0,0)));
+    april.addActivity(jogging);
+
+    return app.exec();
+
+
 }
