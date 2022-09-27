@@ -4,9 +4,8 @@
 
 #include "Activity.h"
 
-Activity::Activity(QDateTime start, QDateTime end): startingDate(start), endingDate(end){
+Activity::Activity(QTime start, QTime end): startingTime(start), endingTime(end){
 }
-
 
 Activity::~Activity() {}
 
@@ -20,21 +19,22 @@ void Activity::setDescription(const std::string &description) {
     Activity::description = description;
 }
 
-const QDateTime &Activity::getStartingDate() const {
-    return startingDate;
+const QTime &Activity::getStartingTime() const {
+    return startingTime;
 }
 
-void Activity::setStartingDate(const QDateTime &startingDate) {
-    Activity::startingDate = startingDate;
+void Activity::setStartingTime(const QTime &startingTime) {
+    Activity::startingTime = startingTime;
 }
 
-const QDateTime &Activity::getEndingDate() const {
-    return endingDate;
+const QTime &Activity::getEndingTime() const {
+    return endingTime;
 }
 
-void Activity::setEndingDate(const QDateTime &endingDate) {
-    Activity::endingDate = endingDate;
+void Activity::setEndingTime(const QTime &endingTime) {
+    Activity::endingTime = endingTime;
 }
+
 
 
 

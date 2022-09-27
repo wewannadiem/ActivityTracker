@@ -13,14 +13,14 @@
 // registro sulla base di un giorno fatta con QT.
 
 int main(int argc, char **argv) {
-    
+
     QApplication app (argc, argv);
 
     Window window;
     window.show();
 
     Register april;
-    Activity jogging(QDateTime(QDate(2020, 10,1), QTime(8,30,0)), QDateTime(QDate(2020,10,1), QTime(9, 0,0)));
+    Activity jogging(QTime(8,30,0), QTime(9, 0,0));
     april.addActivity(jogging);
 
     return app.exec();
