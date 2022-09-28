@@ -17,8 +17,8 @@ public:
 
     void addActivity(Activity &act);
 
-
 private:
+    QString name;
     std::vector<Activity*> list;
 };
 

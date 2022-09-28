@@ -12,7 +12,7 @@
 class Activity {
 public:
 
-    Activity(QTime start, QTime end);
+    Activity(QString name,QTime start, QTime end);
     ~Activity();
 
     // getters and setters
@@ -22,9 +22,11 @@ public:
     void setStartingTime(const QTime &startingTime);
     const QTime &getEndingTime() const;
     void setEndingTime(const QTime &endingTime);
-
+    const QString &getName() const;
+    void setName(const QString &name);
 
 private:
+    QString name;
     std::string description;
     QTime startingTime;
     QTime endingTime;

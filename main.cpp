@@ -4,8 +4,6 @@
 #include "Window.h"
 #include <QApplication>
 #include <QPushButton>
-#include <QProgressBar>
-#include <QSlider>
 
 
 // Registro di attività che memorizza cosa si è fatto durante una giornata. Classe che rappresenta attività con descrizione,
@@ -19,9 +17,9 @@ int main(int argc, char **argv) {
     Window window;
     window.show();
 
-    Register april;
-    Activity jogging(QTime(8,30,0), QTime(9, 0,0));
-    april.addActivity(jogging);
+    Register monday;
+    Activity jogging("jogging", QTime(8,30,0), QTime(9, 0,0));
+    monday.addActivity(jogging);
 
     return app.exec();
 

@@ -4,7 +4,7 @@
 
 #include "Activity.h"
 
-Activity::Activity(QTime start, QTime end): startingTime(start), endingTime(end){
+Activity::Activity(QString name,QTime start, QTime end): name(name), startingTime(start), endingTime(end){
 }
 
 Activity::~Activity() {}
@@ -33,6 +33,14 @@ const QTime &Activity::getEndingTime() const {
 
 void Activity::setEndingTime(const QTime &endingTime) {
     Activity::endingTime = endingTime;
+}
+
+const QString &Activity::getName() const {
+    return name;
+}
+
+void Activity::setName(const QString &name) {
+    Activity::name = name;
 }
 
 
