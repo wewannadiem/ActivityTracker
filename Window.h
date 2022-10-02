@@ -8,6 +8,9 @@
 #include <Register.h>
 #include <QWidget>
 #include <QLabel>
+#include <QComboBox>
+#include <QStringList>
+#include <QTableWidget>
 
 class QPushButton;
 class Window : public QWidget
@@ -15,21 +18,31 @@ class Window : public QWidget
     Q_OBJECT
 public:
     explicit Window(QWidget *parent = 0);
+    void addRegister(Register* reg);
 
-    signals:
+    const QStringList &getRegisterNameList() const;
+    const std::vector<Register *> &getRegisterList() const;
+    void changeTable(Window *window, QComboBox *mainDropDown, QTableWidget *mainTable);
+
+signals:
+
     //void counterReached();
-
 private slots:
     void slotInfoButtonClicked(bool checked);
+    void updateTable(bool checked, Window *window, QComboBox *mainDropDown, QTableWidget *mainTable);
+
 private:
     //QPushButton *m_button;
     QPushButton *buttonInfo;
-    QPushButton *buttonQuit;
+    //QPushButton *buttonQuit;
     QLabel *label;
     QFont fontBig;
     QFont fontSmall;
 
-    QList<Register> dropDownMenu;
+    QStringList registerNameList;
+    std::vector<Register*> registerList;
+
+
 };
 
 

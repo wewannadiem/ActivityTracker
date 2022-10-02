@@ -3,8 +3,9 @@
 //
 
 #include "Register.h"
+#include "Window.h"
 
-Register::Register() {
+Register::Register(QString name): name(name) {
 
 }
 
@@ -14,5 +15,17 @@ Register::~Register() {
 
 
 void Register::addActivity(Activity &act) {
-    list.push_back(&act);
+    listActivities.push_back(&act);
+}
+
+const QString &Register::getName() const {
+    return name;
+}
+
+void Register::setName(const QString &name) {
+    Register::name = name;
+}
+
+const std::vector<Activity *> &Register::getListActivities() const {
+    return listActivities;
 }

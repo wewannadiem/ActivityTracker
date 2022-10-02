@@ -11,15 +11,20 @@
 
 class Register {
 public:
-    Register();
+    explicit Register(QString name);
 
     ~Register();
 
     void addActivity(Activity &act);
 
+    const QString &getName() const;
+    void setName(const QString &name);
+
+    const std::vector<Activity *> &getListActivities() const;
+
 private:
     QString name;
-    std::vector<Activity*> list;
+    std::vector<Activity*> listActivities;
 };
 
 
