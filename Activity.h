@@ -15,19 +15,13 @@ public:
     Activity(QString name,QTime start, QTime end);
     ~Activity();
 
-    // getters and setters
-    const std::string &getDescription() const;
-    void setDescription(const std::string &description);
+    // getters only. No need to set them after construction
     const QTime &getStartingTime() const;
-    void setStartingTime(const QTime &startingTime);
     const QTime &getEndingTime() const;
-    void setEndingTime(const QTime &endingTime);
     const QString &getName() const;
-    void setName(const QString &name);
 
 private:
     QString name;
-    std::string description;
     QTime startingTime;
     QTime endingTime;
 

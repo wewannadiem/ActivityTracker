@@ -11,15 +11,15 @@
 
 class Register {
 public:
-    explicit Register(QString name);
 
+    explicit Register(QString name);
     ~Register();
 
+    // add Activity to the list of Activities of each day
     void addActivity(Activity &act);
 
+    //getters only. No need to set them after construction
     const QString &getName() const;
-    void setName(const QString &name);
-
     const std::vector<Activity *> &getListActivities() const;
 
 private:

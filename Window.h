@@ -22,19 +22,18 @@ public:
 
     const QStringList &getRegisterNameList() const;
     const std::vector<Register *> &getRegisterList() const;
-    void changeTable(Window *window, QComboBox *mainDropDown, QTableWidget *mainTable);
+    QComboBox *getMainDropDown() const;
 
-signals:
+    void changeTable(QString newText);
 
-    //void counterReached();
 private slots:
     void slotInfoButtonClicked(bool checked);
-    void updateTable(bool checked, Window *window, QComboBox *mainDropDown, QTableWidget *mainTable);
+    void updateTable(QString newText);
 
 private:
-    //QPushButton *m_button;
     QPushButton *buttonInfo;
-    //QPushButton *buttonQuit;
+    QTableWidget *mainTable;
+    QComboBox *mainDropDown;
     QLabel *label;
     QFont fontBig;
     QFont fontSmall;

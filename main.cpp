@@ -20,7 +20,7 @@ int main(int argc, char **argv) {
     QApplication app (argc, argv);
     Window window;
 
-    //Create Register and add it to the DropDown Menu
+    //Create Register and add it to the list of Registers for the DropDown menu
     Register first("Monday");
     window.addRegister(&first);
     Register second("Tuesday");
@@ -35,6 +35,7 @@ int main(int argc, char **argv) {
     window.addRegister(&sixth);
 
     //Create Activity and add it to its Register
+    //Monday
     Activity jogging("Jogging", QTime(8,30), QTime(9, 0));
     first.addActivity(jogging);
     Activity mondayStudies("Studying Economics", QTime(10,0), QTime(13,0));
@@ -46,64 +47,62 @@ int main(int argc, char **argv) {
     Activity mondayDinner("Dinner with my friends", QTime(21,0), QTime(23,0));
     first.addActivity(mondayDinner);
 
-    //DropDown menu
-    QComboBox *mainDropDown;
-    mainDropDown = new QComboBox(&window);
-    mainDropDown->setGeometry(20, 100, 100, 40);
-    mainDropDown->addItems(window.getRegisterNameList());
+    //Tuesday
+    Activity tuesdayStudies("Studying Math", QTime(9,30), QTime(12,30));
+    second.addActivity(tuesdayStudies);
+    Activity tuesdayLunch("Lunch at home", QTime(13,0), QTime(14,30));
+    second.addActivity(tuesdayLunch);
+    Activity tuesdayStudiesBis("Studying Science", QTime(15,00), QTime(20,20));
+    second.addActivity(tuesdayStudiesBis);
+    Activity tuesdayDinner("Dinner with my grandma", QTime(20,30), QTime(23,45));
+    second.addActivity(tuesdayDinner);
 
-    //Table of content with Description, Starting Time and Ending Time
-    QTableWidget *mainTable;
-    mainTable = new QTableWidget(9,3, &window);
-    mainTable->setGeometry(140, 100,350,300);
-    mainTable->setColumnWidth(0,140);
-    QStringList headers;
-    headers.push_back("Description");
-    headers.push_back("Beginning");
-    headers.push_back("Ending");
-    mainTable->setHorizontalHeaderLabels(headers);
-    mainTable->setShowGrid(true);
+    //Wednesday
+    Activity wednesday_breakfast("Breakfast", QTime(8,00), QTime(8, 15));
+    third.addActivity(wednesday_breakfast);
+    Activity wednesday_laundry("Laundry", QTime(8,30), QTime(9, 15));
+    third.addActivity(wednesday_laundry);
+    Activity wednesday_cleaning("Cleaning the house", QTime(9,15), QTime(12, 00));
+    third.addActivity(wednesday_cleaning);
+    Activity wednesday_cooking("Cooking both lunch and dinner", QTime(12,00), QTime(14, 15));
+    third.addActivity(wednesday_cooking);
+    Activity wednesday_reading1("Reading Dostoevskij", QTime(14,30), QTime(16, 30));
+    third.addActivity(wednesday_reading1);
+    Activity wednesday_reading2("Reading Tolstoj", QTime(16,30), QTime(18, 30));
+    third.addActivity(wednesday_reading2);
+    Activity wednesday_reading3("Reading Pasternak", QTime(18,30), QTime(20, 30));
+    third.addActivity(wednesday_reading3);
+    Activity wednesday_bath("Long bath", QTime(20,30), QTime(21, 30));
+    third.addActivity(wednesday_bath);
+    Activity wednesday_nerding("Gaming", QTime(21,30), QTime(00, 00));
+    third.addActivity(wednesday_nerding);
+
+    //Thursday
+    Activity thursday_brunch("Brunch", QTime(11,00), QTime(13, 30));
+    fourth.addActivity(thursday_brunch);
+    Activity thursday_barber("Barber", QTime(14,00), QTime(14, 30));
+    fourth.addActivity(thursday_barber);
+    Activity thursday_groceries("Grocery", QTime(14,45), QTime(17, 0));
+    fourth.addActivity(thursday_groceries);
+    Activity thursday_football("Football", QTime(17,15), QTime(19, 30));
+    fourth.addActivity(thursday_football);
+    Activity thursday_dinnerTeam("Dinner with the team", QTime(20,00), QTime(23, 30));
+    fourth.addActivity(thursday_dinnerTeam);
+
+    //Friday
+    Activity friday_shower("Morning Shower", QTime(8,00), QTime(8, 30));
+    fifth.addActivity(friday_shower);
+    Activity friday_preparation("Luggage preparation", QTime(8,30), QTime(11, 30));
+    fifth.addActivity(friday_preparation);
+    Activity friday_train("Train to Milan", QTime(14,00), QTime(17, 30));
+    fifth.addActivity(friday_train);
+    Activity friday_concert("Concert Imagine Dragons", QTime(19,00), QTime(23, 30));
+    fifth.addActivity(friday_concert);
 
 
+    //Add the list of Register (with all the activities inside) in the DropDown menu
+    window.getMainDropDown()->addItems(window.getRegisterNameList());
 
-    connect(mainDropDown, SIGNAL());
-
-    //This if is easily done through a database where you can check the titles by scrolling an iterator
-    //But I don't know how to do a Database... should I do a map? Having an index that can be iterated
-    //and then check each "name" section
-
-    /* while (i<n && found==false) {
-     *      if ( [i].name == currentText() ){
-     *          [...]
-     *      }
-     * }
-    */
-
-    /*
-     * for (int j = 0; j < window.getRegisterList().size(); ++j) {
-        if (mainDropDown->currentText() == window.getRegisterList()[j]->getName()){
-            for (int i = 0; i < window.getRegisterList()[j]->getListActivities().size(); ++i) {
-                QString *string1 = new QString(window.getRegisterList()[j]->getListActivities()[i]->getName());
-                QTableWidgetItem *item1 = new QTableWidgetItem(*string1);
-                mainTable->setItem(i,0, item1);
-
-                QString *string2 = new QString(window.getRegisterList()[j]->getListActivities()[i]->getStartingTime().toString("h:mm"));
-                QTableWidgetItem *item2 = new QTableWidgetItem(*string2);
-                mainTable->setItem(i,1,item2);
-
-                QString *string3 = new QString(window.getRegisterList()[j]->getListActivities()[i]->getEndingTime().toString("h:mm"));
-                QTableWidgetItem *item3 = new QTableWidgetItem(*string3);
-                mainTable->setItem(i,2,item3);
-            }
-        }
-    }
-     */
-
-    /*
-    if (mainDropDown->currentText() == first.getName()){
-        mainTable->setItem(0,0,QTableWidgetItem(QString(first.getListActivities()[0]->getName())));
-    }
-     */
     window.show();
     return app.exec();
 

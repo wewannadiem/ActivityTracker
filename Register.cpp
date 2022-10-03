@@ -13,17 +13,13 @@ Register::~Register() {
 
 }
 
-
+//getters only
 void Register::addActivity(Activity &act) {
     listActivities.push_back(&act);
 }
 
 const QString &Register::getName() const {
     return name;
-}
-
-void Register::setName(const QString &name) {
-    Register::name = name;
 }
 
 const std::vector<Activity *> &Register::getListActivities() const {
