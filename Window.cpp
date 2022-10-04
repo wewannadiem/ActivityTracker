@@ -47,7 +47,7 @@ Window::Window(QWidget *parent) :
 
     // Make the connection
     connect(buttonInfo, SIGNAL(clicked(bool)), this, SLOT(slotInfoButtonClicked(bool)));
-    connect(mainDropDown, SIGNAL(currentTextChanged(const QString &)), this, SLOT(updateTable(const QString &)));
+    connect(mainDropDown, SIGNAL(currentTextChanged(const QString &)), this, SLOT(changeTable(const QString &)));
 }
 
 void Window::slotInfoButtonClicked(bool checked) {
@@ -99,10 +99,6 @@ void Window::changeTable(QString currentText) {
             }
         }
     }
-}
-
-void Window::updateTable(QString newText) {
-    changeTable(newText);
 }
 
 

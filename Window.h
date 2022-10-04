@@ -24,11 +24,10 @@ public:
     const std::vector<Register *> &getRegisterList() const;
     QComboBox *getMainDropDown() const;
 
-    void changeTable(QString newText);
-
 private slots:
+
+    void changeTable(QString newText);
     void slotInfoButtonClicked(bool checked);
-    void updateTable(QString newText);
 
 private:
     QPushButton *buttonInfo;
