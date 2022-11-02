@@ -17,6 +17,7 @@
 
 int main(int argc, char **argv) {
 
+    std::cout << "Errors: " << std::endl;
     QApplication app (argc, argv);
     Window window;
 
@@ -38,7 +39,7 @@ int main(int argc, char **argv) {
     //Monday
     Activity jogging("Jogging", QTime(8,30), QTime(9, 0));
     first.addActivity(jogging);
-    Activity mondayStudies("Studying Economics", QTime(10,0), QTime(13,0));
+    Activity mondayStudies("Studying Economics", QTime(14,0), QTime(13,40));
     first.addActivity(mondayStudies);
     Activity mondayLunch("Lunch at the canteen", QTime(13,30), QTime(15,0));
     first.addActivity(mondayLunch);
@@ -50,10 +51,10 @@ int main(int argc, char **argv) {
     //Tuesday
     Activity tuesdayStudies("Studying Math", QTime(9,30), QTime(12,30));
     second.addActivity(tuesdayStudies);
-    Activity tuesdayLunch("Lunch at home", QTime(13,0), QTime(14,30));
-    second.addActivity(tuesdayLunch);
     Activity tuesdayStudiesBis("Studying Science", QTime(15,00), QTime(20,20));
     second.addActivity(tuesdayStudiesBis);
+    Activity tuesdayLunch("Lunch at home", QTime(13,0), QTime(14,30));
+    second.addActivity(tuesdayLunch);
     Activity tuesdayDinner("Dinner with my grandma", QTime(20,30), QTime(23,45));
     second.addActivity(tuesdayDinner);
 
@@ -90,7 +91,7 @@ int main(int argc, char **argv) {
     fourth.addActivity(thursday_dinnerTeam);
 
     //Friday
-    Activity friday_shower("Morning Shower", QTime(8,00), QTime(8, 30));
+    Activity friday_shower("Morning Shower", QTime(8,00), QTime(8, 40));
     fifth.addActivity(friday_shower);
     Activity friday_preparation("Luggage preparation", QTime(8,30), QTime(11, 30));
     fifth.addActivity(friday_preparation);

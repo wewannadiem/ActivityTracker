@@ -11,17 +11,17 @@
 #include <QComboBox>
 #include <QStringList>
 #include <QTableWidget>
+#include <memory>
 
 class QPushButton;
 class Window : public QWidget
 {
-    Q_OBJECT
+Q_OBJECT
 public:
-    explicit Window(QWidget *parent = 0);
+    explicit Window(QWidget *parent = nullptr);
     void addRegister(Register* reg);
 
     const QStringList &getRegisterNameList() const;
-    const std::vector<Register *> &getRegisterList() const;
     QComboBox *getMainDropDown() const;
 
 private slots:
@@ -39,7 +39,7 @@ private:
 
     QStringList registerNameList;
     std::vector<Register*> registerList;
-
+    //togli raw pointer
 
 };
 

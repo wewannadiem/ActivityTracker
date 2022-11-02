@@ -3,8 +3,11 @@
 //
 
 #include "Activity.h"
+#include <iostream>
+#include <QTime>
 
 Activity::Activity(QString name,QTime start, QTime end): name(name), startingTime(start), endingTime(end){
+
 }
 
 Activity::~Activity() {}
@@ -20,7 +23,11 @@ const QString &Activity::getName() const {
     return name;
 }
 
-
-
-
-
+bool Activity::isEqual(Activity &act) {
+    bool equal;
+    if (name == act.getName() && startingTime==act.getStartingTime() && endingTime == act.getEndingTime()){
+        equal = true;
+    }
+    else equal = false;
+    return equal;
+}

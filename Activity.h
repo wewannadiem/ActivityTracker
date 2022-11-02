@@ -19,6 +19,7 @@ public:
     const QTime &getStartingTime() const;
     const QTime &getEndingTime() const;
     const QString &getName() const;
+    bool isEqual(Activity &act);
 
 private:
     QString name;

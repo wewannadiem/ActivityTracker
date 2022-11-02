@@ -4,24 +4,58 @@
 
 #include "Register.h"
 #include "Window.h"
+#include <iostream>
 
-Register::Register(QString name): name(name) {
+Register::Register(QString nameRegister): name(nameRegister) {
 
 }
-
 Register::~Register() {
 
 }
 
-//getters only
 void Register::addActivity(Activity &act) {
-    listActivities.push_back(&act);
+    int i = 0;
+    bool found = false;
+    while (i < listActivities.size() && !found){
+        if (listActivities[i].getStartingTime() >= act.getStartingTime()){
+            found = true;
+        } else ++i;
+    }
+    listActivities.insert(listActivities.begin()+i, act);
+
+    if (act.getStartingTime() > act.getEndingTime()){
+        std::cout <<
+                  name.toStdString() << ": " <<
+                  act.getName().toStdString() <<
+                  ": Cannot start after it ends" << std::endl;
+    }
 }
 
 const QString &Register::getName() const {
     return name;
 }
 
-const std::vector<Activity *> &Register::getListActivities() const {
-    return listActivities;
+bool Register::searchActivity(Activity &act) {
+    int i = 0;
+    bool found = false;
+    while (i < countActivity() && !found){
+        if (&act == getActivity(i)){
+            found = true;
+        } else i++;
+    }
+    return found;
+}
+
+Activity *Register::getActivity(int i) {
+    return &listActivities[i];
+}
+
+void Register::removeActivity(int i) {
+    if (i < countActivity()) {
+        listActivities.erase(listActivities.begin() + i);
+    }
+}
+
+int Register::countActivity() {
+    return listActivities.size();
 }

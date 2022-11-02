@@ -12,19 +12,29 @@
 class Register {
 public:
 
-    explicit Register(QString name);
+    explicit Register(QString nameRegister);
     ~Register();
-
-    // add Activity to the list of Activities of each day
-    void addActivity(Activity &act);
 
     //getters only. No need to set them after construction
     const QString &getName() const;
-    const std::vector<Activity *> &getListActivities() const;
+
+    //cercare, aggiungere e togliere, contarle
+
+    bool searchActivity(Activity &act);
+    Activity* getActivity(int i);
+    void addActivity(Activity &act);
+    void removeActivity(int i);
+    int countActivity();
+
 
 private:
     QString name;
-    std::vector<Activity*> listActivities;
+    std::vector<Activity> listActivities;
+    //togli raw pointer, smart pointer invece
+
+    //Done 1. remove raw pointers
+    //Done 2. implement methods Search, Add, Remove, Count for Activity and Register, in order to adapt to the new structures
+    //TODO 4. grant that Activities do not overlap in a register
 };
 
 
