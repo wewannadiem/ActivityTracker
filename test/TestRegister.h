@@ -1,0 +1,14 @@
+//
+// Created by wewan on 21/02/2023.
+//
+
+#ifndef ACTIVITYTRACKER_TESTREGISTER_H
+#define ACTIVITYTRACKER_TESTREGISTER_H
+
+
+class TestRegister {
+
+};
+
+
+#endif //ACTIVITYTRACKER_TESTREGISTER_H
