@@ -18,5 +18,7 @@ find_package(Qt5Widgets)
 
 # Use the Widgets module from Qt 5.
 
-add_executable(ActivityTracker main.cpp Activity.cpp Activity.h Register.cpp Register.h Window.cpp Window.h)
+add_executable(ActivityTracker main.cpp Activity.cpp Activity.h Register.cpp Register.h Window.cpp Window.h test/TestActivity.cpp test/TestActivity.h test/TestRegister.cpp test/TestRegister.h)
 target_link_libraries(ActivityTracker Qt5::Widgets)
+
+
