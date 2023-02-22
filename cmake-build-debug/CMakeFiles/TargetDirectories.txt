@@ -1,0 +1,4 @@
+C:/Users/wewan/CLionProjects/ActivityTracker2/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/wewan/CLionProjects/ActivityTracker2/cmake-build-debug/CMakeFiles/ActivityTracker.dir
+C:/Users/wewan/CLionProjects/ActivityTracker2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/wewan/CLionProjects/ActivityTracker2/cmake-build-debug/CMakeFiles/ActivityTracker_autogen.dir

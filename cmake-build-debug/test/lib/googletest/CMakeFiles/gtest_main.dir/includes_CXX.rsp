@@ -1,0 +1,1 @@
+-IC:/Users/wewan/CLionProjects/ActivityTracker2/cmake-build-debug/test/lib/googletest -IC:/Users/wewan/CLionProjects/ActivityTracker2/cmake-build-debug/test/lib/googletest/gtest_main_autogen/include -isystem C:/Users/wewan/CLionProjects/ActivityTracker2/test/lib/googletest -isystem C:/Users/wewan/CLionProjects/ActivityTracker2/test/lib/googletest/include 

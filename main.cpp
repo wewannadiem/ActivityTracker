@@ -2,6 +2,7 @@
 #include "Register.h"
 #include "Activity.h"
 #include "Window.h"
+
 #include <QApplication>
 #include <QPushButton>
 #include <QComboBox>
@@ -11,6 +12,10 @@
 #include <QLabel>
 #include <QStringList>
 
+#include <QTest>
+#include "test/TestActivity.h"
+#include "test/TestRegister.h"
+
 // Registro di attività che memorizza cosa si è fatto durante una giornata. Classe che rappresenta attività con descrizione,
 // tempo inizio e fine, Classe registro che colleziona attività su base del giorno. Interfaccia semplice per mostrare il
 // registro sulla base di un giorno fatta con QT.
@@ -19,6 +24,7 @@ int main(int argc, char **argv) {
 
     std::cout << "Errors: " << std::endl;
     QApplication app (argc, argv);
+    /*
     Window window;
 
     //Create Register and add it to the list of Registers for the DropDown menu
@@ -107,5 +113,17 @@ int main(int argc, char **argv) {
     window.show();
     return app.exec();
 
+*/
 
+    int status = 0;
+    auto ASSERT_TEST = [&status, argc, argv](QObject* obj) {
+        status |= QTest::qExec(obj, argc, argv);
+        delete obj;
+    };
+
+    ASSERT_TEST(new TestActivity());
+    std::cout << "\n" << std::endl;
+    ASSERT_TEST(new TestRegister());
+
+    return status;
 }

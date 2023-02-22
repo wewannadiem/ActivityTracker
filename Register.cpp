@@ -59,3 +59,7 @@ void Register::removeActivity(int i) {
 int Register::countActivity() {
     return listActivities.size();
 }
+
+int Register::getLengthListActivities() {
+    return listActivities.size();
+}

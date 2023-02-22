@@ -12,13 +12,13 @@ set(CMAKE_AUTOMOC ON)
 # Find the QtWidgets library
 find_package(Qt5Widgets)
 
-# Tell CMake to create the helloworld executable
-#add_executable(qtHelloWorld main.cpp)
-#add_executable(qtHelloWorld WIN32 main.cpp)
+# Tell cmake where Qt is located
+set(Qt5_DIR "~/Qt/5.12.2/clang_64/lib/cmake/Qt5")
+# Tell cmake to find the modules Qt5Core and Qt5widgets
+find_package(Qt5 COMPONENTS Core Widgets Test REQUIRED)
 
-# Use the Widgets module from Qt 5.
 
 add_executable(ActivityTracker main.cpp Activity.cpp Activity.h Register.cpp Register.h Window.cpp Window.h test/TestActivity.cpp test/TestActivity.h test/TestRegister.cpp test/TestRegister.h)
-target_link_libraries(ActivityTracker Qt5::Widgets)
+target_link_libraries(ActivityTracker Qt5::Widgets Qt5::Test)
 
 

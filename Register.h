@@ -25,6 +25,7 @@ public:
     void addActivity(Activity &act);
     void removeActivity(int i);
     int countActivity();
+    int getLengthListActivities();
 
 
 private:
@@ -34,7 +35,7 @@ private:
 
     //Done 1. remove raw pointers
     //Done 2. implement methods Search, Add, Remove, Count for Activity and Register, in order to adapt to the new structures
-    //TODO 4. grant that Activities do not overlap in a register
+    //Done 4. grant that Activities do not overlap in a register
 };
 
 

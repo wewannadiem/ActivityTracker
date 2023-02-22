@@ -5,9 +5,14 @@
 #ifndef ACTIVITYTRACKER_TESTACTIVITY_H
 #define ACTIVITYTRACKER_TESTACTIVITY_H
 
+#include <QTest>
+#include "Activity.h"
 
-class TestActivity {
+class TestActivity : public QObject{
+    Q_OBJECT
 
+private slots:
+    void testConstructor();
 };
 
 
