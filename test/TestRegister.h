@@ -5,9 +5,18 @@
 #ifndef ACTIVITYTRACKER_TESTREGISTER_H
 #define ACTIVITYTRACKER_TESTREGISTER_H
 
+#include <QTest>
+#include"Register.h"
 
-class TestRegister {
 
+class TestRegister : public QObject {
+    Q_OBJECT
+
+private slots:
+    void testConstructor();
+    void testAddActivity();
+    void testRemoveActivity();
+    void testRemoveNonExistingActivity();
 };
 
 

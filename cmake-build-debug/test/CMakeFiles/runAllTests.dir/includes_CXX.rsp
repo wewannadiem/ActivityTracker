@@ -1,0 +1,1 @@
+-IC:/Users/wewan/CLionProjects/ActivityTracker2/cmake-build-debug/test -IC:/Users/wewan/CLionProjects/ActivityTracker2/test -IC:/Users/wewan/CLionProjects/ActivityTracker2/cmake-build-debug/test/runAllTests_autogen/include 
