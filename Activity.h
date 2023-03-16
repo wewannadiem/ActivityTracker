@@ -25,8 +25,6 @@ private:
     QString name;
     QTime startingTime;
     QTime endingTime;
-
-
 };
 
 

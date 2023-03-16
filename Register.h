@@ -31,11 +31,13 @@ public:
 private:
     QString name;
     std::vector<Activity> listActivities;
-    //togli raw pointer, smart pointer invece
+
 
     //Done 1. remove raw pointers
-    //Done 2. implement methods Search, Add, Remove, Count for Activity and Register, in order to adapt to the new structures
+    //Done 2. implement methods Search, Add, Remove, Count for Register, in order to adapt to the new structures
+    //Done 3. grant that Activity has ending time later than starting time in constructor, show error.
     //Done 4. grant that Activities do not overlap in a register
+    //Done 5. QT Unit Testing, for Register only.
 };
 
 

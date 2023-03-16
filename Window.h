@@ -39,7 +39,6 @@ private:
 
     QStringList registerNameList;
     std::vector<Register*> registerList;
-    //togli raw pointer
 
 };
 

@@ -24,7 +24,7 @@ int main(int argc, char **argv) {
 
     std::cout << "Errors: " << std::endl;
     QApplication app (argc, argv);
-    /*
+/*
     Window window;
 
     //Create Register and add it to the list of Registers for the DropDown menu
